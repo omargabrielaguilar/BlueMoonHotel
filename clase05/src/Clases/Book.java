@@ -30,5 +30,11 @@ public class Book {
 	public void setPublicacion(String publicacion) {
 		this.publicacion = publicacion;
 	}
+	@Override
+	public String toString() {
+		return "Book [nombre=" + nombre + ", autor=" + autor + ", publicacion=" + publicacion + "]";
+	}
+	
+	
 	
 }
