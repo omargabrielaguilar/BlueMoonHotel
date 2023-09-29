@@ -2,18 +2,24 @@ package Clases;
 
 import java.util.ArrayList;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement(name="biblioteca")
+@XmlRootElement(name="Biblioteca")
 @XmlType(propOrder={"autor","nombre","publicacion"})
 
 public class BookStore {
+	
+	@XmlElementWrapper(name = "ListaLibros")
+	@XmlElement(name = "libro")
+	
 	private ArrayList<Book> listarLibros;
 	private String nombre;
 	private String ubicación;
 	
-	public ArrayList<Book> getListarLibros() {
+	public ArrayList<Book> getListarLibro() {
 		return listarLibros;
 	}
 	public void setListarLibros(ArrayList<Book> listarLibros) {
