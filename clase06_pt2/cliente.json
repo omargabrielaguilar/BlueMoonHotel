@@ -1,0 +1,10 @@
+{
+  "nombre": "Omar",
+  "ciudad": "Trux",
+  "edad": 21,
+  "preferencias": [
+    "Deportes",
+    "Peliculas",
+    "Comida"
+  ]
+}
