@@ -3,10 +3,12 @@ package com.example.demo.controller;
 import com.example.demo.dao.EmpleadoRepository;
 import com.example.demo.model.Empleado;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("api/empleados")
@@ -25,13 +27,24 @@ public class EmpleadoController {
     }
 
     @PutMapping("/empleado/{id}")
-    public Empleado actualizar(@PathVariable String id, Empleado empleado){
-        empleado.setId(id);  // Asignar el ID al objeto Empleado
+    public Empleado actualizar(@PathVariable String id, @Validated @RequestBody Empleado empleado){
+        empleado.setId(id);
         return repository.save(empleado);
     }
 
     @DeleteMapping("/empleado/{id}")
     public void eliminar(@PathVariable String id) {
         repository.deleteById(id);
+    }
+
+
+    @GetMapping("/empleado/{id}")
+    public ResponseEntity<Empleado> buscarPorId(@PathVariable String id) {
+        Optional<Empleado> empleado = repository.findById(id);
+        if (empleado.isPresent()) {
+            return ResponseEntity.ok(empleado.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Document(collection = "empleados")
 public class Empleado {
+    @Id
     private String id;
     private String nombre;
     private String apellido;
