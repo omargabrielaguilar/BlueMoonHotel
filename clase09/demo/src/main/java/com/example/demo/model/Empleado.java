@@ -10,10 +10,11 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "productos")
-public class Producto {
+@Document(collection = "empleados")
+public class Empleado {
     private String id;
     private String nombre;
-    private Double precio;
-    private LocalDate fecha_expiracion;
+    private String apellido;
+    private Double salario;
+    private LocalDate fecha_registro;
 }
