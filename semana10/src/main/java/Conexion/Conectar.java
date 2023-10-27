@@ -10,7 +10,7 @@ public class Conectar {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cibertec?characterEncoding=latinserverTimezone=UTC", "omar", "mypass");
+			cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cibertec?characterEncoding=latinserverTimezone=UTC", "root", "mypass");
 			
 			
 		}catch (Exception e) {
