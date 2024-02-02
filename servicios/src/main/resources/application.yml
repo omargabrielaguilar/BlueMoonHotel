@@ -1,7 +1,0 @@
-server:
-  port: 8080
-spring:
-  datasource:
-    password: mysql
-    url: jdbc:mysql://localhost:3306/cibertecservicio?serverTimezone=UTC
-    username: root
