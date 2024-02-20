@@ -33,6 +33,30 @@
         "documentation": {}
     },
     {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -46,6 +70,38 @@
         "description": "django.core.wsgi",
         "isExtraImport": true,
         "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
         "documentation": {}
     },
     {
@@ -224,7 +280,7 @@
         "kind": 5,
         "importPath": "config.urls",
         "description": "config.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('pages.urls')),\n]",
         "detail": "config.urls",
         "documentation": {}
     },
@@ -235,6 +291,33 @@
         "description": "config.wsgi",
         "peekOfCode": "application = get_wsgi_application()",
         "detail": "config.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "PagesConfig",
+        "kind": 6,
+        "importPath": "pages.apps",
+        "description": "pages.apps",
+        "peekOfCode": "class PagesConfig(AppConfig):\n    name = 'pages'",
+        "detail": "pages.apps",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "pages.urls",
+        "description": "pages.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', homePageView, name= 'home'),\n]",
+        "detail": "pages.urls",
+        "documentation": {}
+    },
+    {
+        "label": "homePageView",
+        "kind": 2,
+        "importPath": "pages.views",
+        "description": "pages.views",
+        "peekOfCode": "def homePageView(request):\n    return HttpResponse(\"Hello, world!\")",
+        "detail": "pages.views",
         "documentation": {}
     },
     {
